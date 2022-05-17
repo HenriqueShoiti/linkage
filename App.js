@@ -3,14 +3,15 @@ import React from 'react';
 import { StyleSheet, Text, View, image} from 'react-native';
 
 export default function App() {
- 
+
   return (
     <View style={styles.container}>
-      <Text>Open up ayour apssssp</Text>
+      <Text>Open up ayour app</Text>
       <StatusBar style="auto" />
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
