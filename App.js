@@ -1,23 +1,74 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, image} from 'react-native';
+import { StyleSheet, Text, View, image, SafeAreaView, Button} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
-
-  return (
-    <View style={styles.container}>
-      <Text>Open up ayour app</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: '#fee',
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  header: {
+    fontSize: 36,
+    alignItems: 'center',
+    backgroundColor: 'blue',
+  
+
   },
 });
+
+//creates home page, user's content wil go in here
+function HomePage({navigation}){
+  return(
+    <View style = {styles.header}>
+      <Button
+        title="Go to profile"
+        onPress={() => navigation.navigate('Profile')}
+      />
+    </View>
+  );
+}
+
+
+//creates a page for user profile, will let user edit their info and other settings
+function ProfilePage({navigation}){
+  return(
+    <View style = {styles.header}>
+      <Button
+        title="Go to home page"
+        onPress={() => navigation.navigate('Home')}
+      />
+    </View>
+  );
+}
+
+
+//define components for stack navigation
+const Stack = createStackNavigator();
+
+function MyStack() {
+  return(
+    <Stack.Navigator>
+      <Stack.Screen name = "Home" component={HomePage}/>
+      <Stack.Screen name = "Profile" component={ProfilePage}/>
+    </Stack.Navigator>
+  );
+}
+
+export default function App() {
+
+  return (      
+      <NavigationContainer>
+        <MyStack/>
+      </NavigationContainer>
+
+      
+    //  <StatusBar style="auto"/>
+  );
+}
+
+
