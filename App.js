@@ -4,19 +4,17 @@ import { StyleSheet, Text, View, image, SafeAreaView, Button} from 'react-native
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import styles from './styles.js'
-
+import SigninScreen from './screens/SigninScreen.js';
 
 
 
 //creates home page, user's content wil go in here
 function HomePage({navigation}){
-  return(
-    <View style = {styles.header}>
-      <Button
-        title="Go to profile"
-        onPress={() => navigation.navigate('Profile')}
-      />
-    </View>
+  return(     
+      <View style = {{justifyContent:"space-between"}}>
+        <SigninScreen/>
+    
+      </View>
   );
 }
 
