@@ -1,25 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, image, SafeAreaView, Button} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import styles from './styles.js'
 
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fee',
-    alignItems: 'center',
-  },
-  header: {
-    fontSize: 36,
-    alignItems: 'center',
-    backgroundColor: 'blue',
-  
-
-  },
-});
 
 //creates home page, user's content wil go in here
 function HomePage({navigation}){
