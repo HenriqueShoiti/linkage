@@ -7,12 +7,13 @@ import styles from './styles.js'
 import SigninScreen from './screens/SigninScreen.js';
 
 
-
 //creates home page, user's content wil go in here
 function HomePage({navigation}){
   return(     
       <View style = {{justifyContent:"space-between"}}>
         <SigninScreen/>
+
+        
     
       </View>
   );
