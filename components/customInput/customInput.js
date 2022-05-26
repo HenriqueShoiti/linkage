@@ -3,7 +3,7 @@ import {View, Text, TextInput, StyleSheet, secureTextEntry} from 'react-native'
 
 const CustomInput = ({value, setValue, placeholder, secureTextEntry}) => {
     return(
-        <View>
+        <View style={styles.container}>
             <TextInput
                 placeholder={placeholder} 
                 value = {value}
