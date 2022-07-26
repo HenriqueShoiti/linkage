@@ -4,6 +4,7 @@ import logo from "../../assets/banana.jpg"
 import CustomInput from '../../components/customInput'
 import CustomButton from '../../components/customButton'
 import SignUpScreen from '../SignUpScreen'
+import SocialSignInButtons from '../../components/SocialSignInButtons'
 
 const SigninScreen = () => {
     const { height } = useWindowDimensions()
@@ -55,19 +56,10 @@ const SigninScreen = () => {
                     onPress={onForgotPasswordPressed}
                     type="TERTIARY"
                 />
-                <CustomButton
-                    text = "Sign in with Google"
-                    onPress={onSignInGoogle}
-                    bgColor="#FAE9EA"
-                    fgColor="#DD4D44"
-                />
-                <CustomButton
-                    text = "Sign in with Apple"
-                    onPress={onSignInApple}
-                    bgColor="#e3e3e3"
-                    fgColor="#363636"
-                    
-                />
+               
+               {/* buttons for sign in with social accounts*/}
+               <SocialSignInButtons/>
+               
                 <CustomButton
                     text = "Don't have an account? Create one!"
                     onPress={onSignUpPressed}

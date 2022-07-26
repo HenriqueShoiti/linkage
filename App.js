@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, image, SafeAreaView, Button} from 'react-native
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import styles from './styles.js'
-import SigninScreen from './screens/SignInScreen/SigninScreen.js';
+import SignInScreen from './screens/SignInScreen/SigninScreen.js';
 import SignUpScreen from './screens/SignUpScreen/SignUpScreen.js';
 
 //creates home page, user's content wil go in here
