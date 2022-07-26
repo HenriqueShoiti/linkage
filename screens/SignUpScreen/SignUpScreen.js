@@ -23,7 +23,7 @@ const SignUpScreen = () => {
         console.warn("privacy policy")
     }
     
-    const onSignUpPressed = () => {
+    const onSignInPressed = () => {
         console.warn("sign up pressed")
     }
 
@@ -71,6 +71,11 @@ const SignUpScreen = () => {
                 {/*buttons for social sign in */}
                 <SocialSignInButtons/>
                 
+                <CustomButton
+                    text = "Have an account? Sign in"
+                    onPress={onSignInPressed}
+                    type = "TERTIARY"
+                />
 
             </View>
         </ScrollView>

@@ -38,6 +38,15 @@ const styles = StyleSheet.create({
 
 
     },
+    container_SECONDARY:{
+        borderColor: '#3B71F3',
+        borderWidth: 2,
+    },
+
+    text_SECONDARY:{
+        fontWeight: 'bold',
+        color: '#3B71F3',
+    },
     container_TERTIARY:{},
     text_PRIMARY: {
         fontWeight: 'bold',
