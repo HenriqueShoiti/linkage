@@ -1,9 +1,9 @@
 import react, {useState} from 'react'
 import { View, Text, Image, StyleSheet,useWindowDimensions, ScrollView } from 'react-native'
-import logo from "../../assets/banana.jpg"
+import logo from "../../../assets/banana.jpg"
 import CustomInput from '../../components/customInput'
 import CustomButton from '../../components/customButton'
-import SignUpScreen from '../SignUpScreen'
+import SignUpScreen from '../../screens/SignUpScreen'
 import SocialSignInButtons from '../../components/SocialSignInButtons'
 
 const SigninScreen = () => {
