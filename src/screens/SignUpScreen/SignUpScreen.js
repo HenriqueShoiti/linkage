@@ -1,5 +1,6 @@
 import react, {useState} from 'react'
 import { View, Text, Image, StyleSheet,useWindowDimensions, ScrollView } from 'react-native'
+import {useNavigation} from '@react-navigation/core'
 
 import CustomInput from '../../components/customInput'
 import CustomButton from '../../components/customButton'
@@ -11,20 +12,30 @@ const SignUpScreen = () => {
     const { email, setEmail } = useState('');
     const { password, setPassword } = useState('');
     const { passwordRepeat, setPasswordRepeat} = useState('');
+    const navigation = useNavigation();
+
 
     const onRegisterPressed = () => {
         console.warn("registered")
+        //after validate and store the given info from user create an account and go back to the sign in page
+
+        navigation.navigate('SignInScreen')
+
     }
 
     const onTermsOfUsePressed = () => {
         console.warn("terms of use")
+        //probably jump to a page on web where info are stored
     }
     const onPrivacyPolicyPressed = () => {
         console.warn("privacy policy")
+        //probably jump to a page on web where info are stored
     }
     
     const onSignInPressed = () => {
         console.warn("sign up pressed")
+        //looks like the user has an account so jump to sign in page
+        navigation.navigate('SignInScreen')
     }
 
     return (
