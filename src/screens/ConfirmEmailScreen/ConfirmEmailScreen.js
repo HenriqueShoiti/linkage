@@ -1,5 +1,6 @@
 import react, {useState} from 'react'
 import { View, Text, Image, StyleSheet,useWindowDimensions, ScrollView } from 'react-native'
+import {useNavigation} from '@react-navigation/native'
 
 import CustomInput from '../../components/customInput'
 import CustomButton from '../../components/customButton'
@@ -7,9 +8,11 @@ import SocialSignInButtons from '../../components/SocialSignInButtons'
 
 const ConfirmEmailScreen = () => {
     const { code, setCode } = useState('');
-    
+    const navigation = useNavigation();
+
     const onConfirmPressed = () => {
         console.warn("confirmed")
+        navigation.navigate('HomeScreen')
     }
 
     const onResendCodePressed = () => {

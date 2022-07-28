@@ -31,6 +31,9 @@ const SigninScreen = () => {
     const onSignInApple = () => {
         console.warn("sign in with apple")
     }
+    const onSignInFacebook = () => {
+        console.warn("sign in with facebook")
+    }
     const onSignUpPressed = () => {
         console.warn("sign up pressed")
         //jumps to the page to create a new account

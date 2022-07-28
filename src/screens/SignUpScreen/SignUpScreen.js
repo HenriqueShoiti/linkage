@@ -17,9 +17,9 @@ const SignUpScreen = () => {
 
     const onRegisterPressed = () => {
         console.warn("registered")
-        //after validate and store the given info from user create an account and go back to the sign in page
+        //jump to the page where we confirm the email from user
 
-        navigation.navigate('SignInScreen')
+        navigation.navigate('ConfirmEmailScreen')
 
     }
 
