@@ -1,5 +1,7 @@
 import react, {useState} from 'react'
 import { View, Text, Image, StyleSheet,useWindowDimensions, ScrollView } from 'react-native'
+import {useNavigation} from '@react-navigation/native';
+
 import logo from "../../../assets/banana.jpg"
 import CustomInput from '../../components/customInput'
 import CustomButton from '../../components/customButton'
@@ -8,14 +10,20 @@ import SocialSignInButtons from '../../components/SocialSignInButtons'
 
 const SigninScreen = () => {
     const { height } = useWindowDimensions()
+    const navigation = useNavigation();
     const { username, setUsername } = useState('')
     const { password, setPassword } = useState('')
     const onSignInPressed = () => {
         console.warn("Sign in")
+        //validate user then go home page
+
+        navigation.navigate('HomeScreen')
     }
 
     const onForgotPasswordPressed = () => {
         console.warn("forgot password")
+
+        navigation.navigate('ForgotPasswordScreen')
     }
     const onSignInGoogle = () => {
         console.warn("sign in with google")
@@ -25,6 +33,8 @@ const SigninScreen = () => {
     }
     const onSignUpPressed = () => {
         console.warn("sign up pressed")
+        //jumps to the page to create a new account
+        navigation.navigate('SignUpScreen')
     }
 
     return (
