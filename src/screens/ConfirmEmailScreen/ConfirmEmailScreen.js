@@ -11,7 +11,6 @@ const ConfirmEmailScreen = () => {
     const navigation = useNavigation();
 
     const onConfirmPressed = () => {
-        console.warn("confirmed")
         navigation.navigate('HomeScreen')
     }
 
@@ -19,12 +18,9 @@ const ConfirmEmailScreen = () => {
         console.warn("code resent")
     }
     const onBackToSignIn = () => {
-        console.warn("back to sign in")
+        navigation.navigate('SignInScreen')
     }
     
-    const onSignInPressed = () => {
-        console.warn("sign up pressed")
-    }
 
     return (
         <ScrollView>

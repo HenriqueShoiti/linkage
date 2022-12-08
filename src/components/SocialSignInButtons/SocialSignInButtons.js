@@ -9,7 +9,7 @@ const onSignInApple = () => {
     console.warn("sign in with apple")
 }
 const onSignInFacebook = () => {
-    console.warn("sign in with apple")
+    console.warn("sign in with facebook")
 }
 
 const SocialSignInButtons = () => {

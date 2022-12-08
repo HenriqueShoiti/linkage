@@ -13,18 +13,14 @@ const ForgotPasswordScreen = () => {
     
     const onSendPressed = () => {
         console.warn("sent")
+        navigation.navigate('ConfirmEmailScreen')
     }
 
     const onResendCodePressed = () => {
         console.warn("code resent")
     }
     const onBackToSignIn = () => {
-        console.warn("back to sign in")
         navigation.navigate('SignInScreen')
-    }
-    
-    const onSignInPressed = () => {
-        console.warn("sign up pressed")
     }
 
     return (

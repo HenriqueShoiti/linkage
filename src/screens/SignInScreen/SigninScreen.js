@@ -14,28 +14,16 @@ const SigninScreen = () => {
     const { username, setUsername } = useState('')
     const { password, setPassword } = useState('')
     const onSignInPressed = () => {
-        console.warn("Sign in")
         //validate user then go home page
 
         navigation.navigate('HomeScreen')
     }
 
     const onForgotPasswordPressed = () => {
-        console.warn("forgot password")
 
         navigation.navigate('ForgotPasswordScreen')
     }
-    const onSignInGoogle = () => {
-        console.warn("sign in with google")
-    }
-    const onSignInApple = () => {
-        console.warn("sign in with apple")
-    }
-    const onSignInFacebook = () => {
-        console.warn("sign in with facebook")
-    }
     const onSignUpPressed = () => {
-        console.warn("sign up pressed")
         //jumps to the page to create a new account
         navigation.navigate('SignUpScreen')
     }
