@@ -5,18 +5,23 @@ import {useNavigation} from '@react-navigation/native';
 import logo from "../../../assets/banana.jpg"
 import CustomInput from '../../components/customInput'
 import CustomButton from '../../components/customButton'
-import SignUpScreen from '../../screens/SignUpScreen'
 import SocialSignInButtons from '../../components/SocialSignInButtons'
+import {Auth, signInButton} from 'aws-amplify'
 
 const SigninScreen = () => {
     const { height } = useWindowDimensions()
     const navigation = useNavigation();
     const { username, setUsername } = useState('')
     const { password, setPassword } = useState('')
-    const onSignInPressed = () => {
-        //validate user then go home page
 
-        navigation.navigate('HomeScreen')
+    //make the function async as it will be asynchronous function
+    const onSignInPressed = async (data) => {
+        //validate user then go home page
+        const response = await Auth.signIn(data.username, data.password);
+        //to debug
+        console.log(response);
+
+        //navigation.navigate('HomeScreen');
     }
 
     const onForgotPasswordPressed = () => {
