@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -10,21 +10,25 @@ import ConfirmEmailScreen from '../screens/ConfirmEmailScreen/';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen/';
 import NewPasswordScreen from '../screens/NewPasswordScreen/';
 import HomeScreen from '../screens/HomeScreen'
+import { Auth, Hub } from 'aws-amplify';
 
 
 
 const Stack = createNativeStackNavigator();
 
-function MyStack() {
-    return (
-        <Stack.Navigator>
-
-        </Stack.Navigator>
-    );
-}
-
 
 const Navigation = () => {
+    const[user,setUser] = useState(undefined);
+    const checkUser = async () =>{
+        try{
+            const authUser = await Auth.currentAuthenticatedUser({bypassCache: true});
+            setUser(authUser);
+        }catch (err){
+            setUser(null);
+        }
+    };
+
+
     return(
         <NavigationContainer>
             <Stack.Navigator screenOptions={{headerShown: false}}>
