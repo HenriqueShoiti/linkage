@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { View, Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -27,6 +27,20 @@ const Navigation = () => {
             setUser(null);
         }
     };
+
+    //runs useEffect only on the first render
+    useEffect(() => {
+        checkUser();
+    },[]);
+
+    useEffect(() => {
+        const listener = data=> {
+            if (data.payload.event === 'signIn' || data.payload.event === 'signOut'){
+                checkUser();
+            }
+        }
+        checkUser();
+    },[]);
 
 
     return(

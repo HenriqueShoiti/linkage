@@ -27,6 +27,7 @@ const CustomInput = ({control, name, rules = {}, placeholder, secureTextEntry}) 
                         
                     />
                 </View>
+                
             )}
         />
     );
@@ -47,5 +48,5 @@ const styles = StyleSheet.create({
     input:{
 
     },
-})
-export default CustomInput
+});
+export default CustomInput;

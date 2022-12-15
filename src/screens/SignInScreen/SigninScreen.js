@@ -19,7 +19,7 @@ const SigninScreen = () => {
 
     //make the function async as it will be asynchronous function
     const onSignInPressed = async data => {
-        console.log("user name is ", data.username);
+                
         if(loading){
             return;
         }
@@ -42,6 +42,7 @@ const SigninScreen = () => {
 
         navigation.navigate('ForgotPasswordScreen')
     }
+    
     const onSignUpPressed = () => {
         //jumps to the page to create a new account
         navigation.navigate('SignUpScreen')
