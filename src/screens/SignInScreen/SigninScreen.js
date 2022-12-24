@@ -61,7 +61,7 @@ const SigninScreen = () => {
                     name="username"
                     placeholder="Username"
                     control={control}
-                    rules={{required: "Username is required"}}
+                    rules={{required: 'Username is required'}}
                 />
 
                 <CustomInput

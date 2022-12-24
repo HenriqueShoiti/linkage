@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { View, Text } from 'react-native'
+import { View, ActivityIndicator } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -27,34 +27,48 @@ const Navigation = () => {
             setUser(null);
         }
     };
-
-    //runs useEffect only on the first render
+    
     useEffect(() => {
         checkUser();
-    },[]);
+    }, []);
 
     useEffect(() => {
         const listener = data=> {
             if (data.payload.event === 'signIn' || data.payload.event === 'signOut'){
                 checkUser();
             }
+        };
+        Hub.listen('auth', listener);
+       
+        if(!!listener){
+            Hub.remove('auth',listener);
         }
-        checkUser();
+        
     },[]);
-
+    
+    if (user === undefined){
+        return (
+            <View style={{flex:1, justifyContent:'center', alignItems: 'center'}}>
+                < ActivityIndicator />
+            </View> 
+        );
+    }
 
     return(
         <NavigationContainer>
             <Stack.Navigator screenOptions={{headerShown: false}}>
-                
-                <Stack.Screen name="SignInScreen" component={SignInScreen} />
-                    
-                <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-                <Stack.Screen name="ConfirmEmailScreen" component={ConfirmEmailScreen} />
-                <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
-                <Stack.Screen name="NewPasswordScreen" component={NewPasswordScreen} />
-
-                <Stack.Screen name="HomeScreen" component={HomeScreen} />
+                {user ? (
+                    <Stack.Screen name="HomeScreen" component={HomeScreen} />
+                ):(
+                <>
+                    <Stack.Screen name="SignInScreen" component={SignInScreen} />
+                        
+                    <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+                    <Stack.Screen name="ConfirmEmailScreen" component={ConfirmEmailScreen} />
+                    <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
+                    <Stack.Screen name="NewPasswordScreen" component={NewPasswordScreen} />
+                </>
+                )}
             </Stack.Navigator>
         </NavigationContainer>
     );
